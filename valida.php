@@ -17,9 +17,8 @@ if(!empty($login) && !empty($senha)){
     }else{
         header('Location: index.php');
     }
-    //echo "Seja bem vindo, $login.";
 }else{
-    echo "Usuário não logado !!!";
+    header('Location: index.php');
 }
 
 ?>
