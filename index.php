@@ -7,19 +7,20 @@
     <?php
         //echo "Olá Mundo !!!";
     ?>
-        <form action="index.php" method="post">
+            <form action="valida.php" method="post">
             <fieldset>
-                <label for="cLogin">Login:</label>
-                <input type="text" name="cLogin" id="cLogin">
+                <label for="cLogin">Email:</label>
+                <input type="text" name="login" id="cLogin">
             </fieldset>
 
             <fieldset>
                 <label for="cSenha">Senha:</label>
-                <input type="text" name="cSenha" id="cSenha">
+                <input type="password" name="senha" id="cSenha">
             </fieldset>
 
             <fieldset>
-            <input type="submit" name="Enviar" value="Enviar">
+                <input type="submit" name="entrar" value="Entrar">
+                <input type="reset" name="limpar" value="Limpar">
             </fieldset>
         </form>
 	</body>
