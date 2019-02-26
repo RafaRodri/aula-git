@@ -1,5 +1,5 @@
 ﻿<?php
 
-echo "Você está na pagina inicial";
+echo $_COOKIE['user'];
 
 ?>
