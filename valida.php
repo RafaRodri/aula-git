@@ -8,7 +8,12 @@ if(isset($_POST['senha'])){
 }
 
 if(!empty($login) && !empty($senha)){
-    echo "Seja bem vindo, $login.";
+    if($login == 'Rafa' && $senha == '123'){
+        header('Location: home.php');
+    }else{
+        header('Location: index.php');
+    }
+    //echo "Seja bem vindo, $login.";
 }else{
     echo "Usuário não logado !!!";
 }
