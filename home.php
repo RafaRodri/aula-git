@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<html>
 <head>
     <title>Git</title>
@@ -13,3 +14,10 @@
     </div>
 </body>
 </html>
+=======
+﻿<?php
+
+echo $_COOKIE['user'];
+
+?>
+>>>>>>> 1f2f868346f61116134588f3db0e5319b3636256
