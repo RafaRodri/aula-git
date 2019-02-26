@@ -8,7 +8,16 @@ if(isset($_POST['senha'])){
 }
 
 if(!empty($login) && !empty($senha)){
-    echo "Seja bem vindo, $login.";
+    if($login == 'Rafa' && $senha == '123'){
+        header('Location: home.php');
+        setcookie("user",$login,time()+100);
+        /*name is your cookie's name
+        value is cookie's value
+        $int is time of cookie expires*/
+    }else{
+        header('Location: index.php');
+    }
+    //echo "Seja bem vindo, $login.";
 }else{
     echo "Usuário não logado !!!";
 }
