@@ -4,7 +4,11 @@ body{
 }
 
 form{
+    text-align: center;
     width: 50%;
     margin: auto;
-    text-align: center;
+}
+
+.identificacao a{
+    float:right;
 }

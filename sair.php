@@ -1,0 +1,12 @@
+
+    <?php
+    session_start();
+
+    //unset($_COOKIE["user"]);
+    setcookie("user","",time()-1);
+
+    header("Location: index.php")
+    ?>
+</div>
+</body>
+</html>
