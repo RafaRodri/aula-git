@@ -1,5 +1,7 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8"/>
     <title>Git</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -18,7 +20,7 @@
         <?php
         }else{
             session_start();
-            $_SESSION['loginErro'] = "Área restrita";
+            $_SESSION['msg'] = "Área restrita";
             header('Location: index.php');
         }
         ?>

@@ -1,13 +1,15 @@
 ﻿<?php
 session_start();
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 	<head>
+        <meta charset="UTF-8"/>
 		<title>Git</title>
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-            <form action="valida.php" method="post">
+        <form action="valida.php" method="post">
             <fieldset>
                 <label for="cLogin">Email:</label>
                 <input type="text" name="login" id="cLogin">
@@ -22,12 +24,14 @@ session_start();
                 <input type="submit" name="btnLogin" value="Acessar">
                 <input type="reset" name="limpar" value="Limpar">
             </fieldset>
+
+            <a href="cadastrar.php">Cadastrar conta</a>
         </form>
     <div>
         <?php
-        if(isset($_SESSION['loginErro'])){
-            echo $_SESSION['loginErro'];
-            unset($_SESSION['loginErro']);
+        if(isset($_SESSION['msg'])){
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
         }
         ?>
     </div>

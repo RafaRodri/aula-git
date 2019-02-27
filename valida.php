@@ -15,19 +15,23 @@ if($btfLogin){
     try{
         $sql = "SELECT * FROM user WHERE usuario = '$login'";
 
-        $result = $conn->conectaDB()->prepare($sql);
-        $result->execute();
+        $stmt = $conn->conectaDB()->prepare($sql);
+        $stmt->execute();
 
 
-        if($result){
-            $results = $result->fetch(PDO::FETCH_ASSOC);
+        if($stmt){
+            $fetch = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if(password_verify($senha, $results['senha'])){
-                unset($_SESSION['loginErro']);
-                setcookie("user",$login,time()+3600);
+            if(password_verify($senha, $fetch['senha'])){
+                unset($_SESSION['msg']);
+
+                setcookie("id",$fetch['id'],time()+3600);
+                setcookie("nome",$fetch['nome'],time()+3600);
+                setcookie("user",$fetch['usuario'],time()+3600);
+                setcookie("email",$fetch['email'],time()+3600);
                 header('Location: home.php');
             }else{
-                $_SESSION['loginErro'] = "Usuário ou senha incorreto";
+                $_SESSION['msg'] = "Usuário ou senha incorreto";
                 header('Location: index.php');
             }
 
@@ -37,24 +41,9 @@ if($btfLogin){
     }catch (PDOException $e){
         echo '{"error":{"text":'.$e->getMessage().'}}';
     }
-    die();
-
-    if(!empty($login) && !empty($senha)){
-        if($login == 'Rafa' && $senha == md5('123')){
-            unset($_SESSION['loginErro']);
-            setcookie("user",$login,time()+3600);
-            header('Location: home.php');
-        }else{
-            $_SESSION['loginErro'] = "Usuário ou senha incorreto";
-            header('Location: index.php');
-        }
-    }else{
-        $_SESSION['loginErro'] = "Usuário ou senha inválido";
-        header('Location: index.php');
-    }
 }
 else{
-    $_SESSION['loginErro'] = "Área restrita";
+    $_SESSION['msg'] = "Área restrita";
     header('Location: index.php');
 }
 
