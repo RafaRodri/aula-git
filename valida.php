@@ -31,7 +31,7 @@ if($btfLogin){
                 setcookie("email",$fetch['email'],time()+3600);
                 header('Location: home.php');
             }else{
-                $_SESSION['msg'] = "Usuário ou senha incorreto";
+                $_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreto</div>";
                 header('Location: index.php');
             }
 
@@ -43,7 +43,7 @@ if($btfLogin){
     }
 }
 else{
-    $_SESSION['msg'] = "Área restrita";
+    $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita</div>";
     header('Location: index.php');
 }
 

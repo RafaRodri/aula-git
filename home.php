@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Git</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -20,7 +23,7 @@
         <?php
         }else{
             session_start();
-            $_SESSION['msg'] = "Área restrita";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita</div>";
             header('Location: index.php');
         }
         ?>
@@ -30,5 +33,8 @@
             <div class="col-4 bg-warning">teste</div>
         </div>
     </div>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

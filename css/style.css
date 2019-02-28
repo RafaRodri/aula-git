@@ -3,10 +3,39 @@ body{
     font-family: cursive, Arial, sans-serif;
 }
 
+.container{
+    color: #fff;
+}
+
+.form-signin{
+    border: 1px solid #000;
+    background-color: #4ec0d2;/*#6ac7a4;
+    width: 40%;
+    margin: auto;*/
+    margin-top: 20px;
+}
+
 form{
-    text-align: center;
-    width: 50%;
+    width: 80%;
     margin: auto;
+    padding: 10px 0px;
+}
+
+form label{
+    text-align: left;
+}
+
+form input{
+    width: 100%;
+}
+
+form .buttons{
+    padding: 5px;
+    text-align: center;
+}
+
+form .buttons input{
+    width: 45%;
 }
 
 .identificacao a{
